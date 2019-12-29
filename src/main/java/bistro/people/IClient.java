@@ -1,7 +1,12 @@
 package bistro.people;
 
-public interface IClient {
+import bistro.bonus.IBonus;
+
+public interface IClient extends IBonus {
     String getBonus();
     void makeOrder();
     String getName();
+
+    @Override
+    double discount();
 }

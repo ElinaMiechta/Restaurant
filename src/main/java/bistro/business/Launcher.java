@@ -1,11 +1,12 @@
 package bistro.business;
 
-import bistro.bonus.Bonus;
 import bistro.iterator.Iterator;
 import bistro.meal.*;
 import bistro.people.Client;
+import bistro.people.ClientPlus;
 import bistro.people.IClient;
 import bistro.people.Waiter;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,11 +87,20 @@ Initializing ingredients
         IClient c1 = new Client("Alisa", "Smith");
         IClient c2 = new Client("Denis", "Melnikov");
         IClient c3 = new Client("Karolina", "Bielicka");
-        c1.makeOrder();
-        //c2.makeOrder();
-       // c3.makeOrder();
+        ClientPlus c4 = new ClientPlus("Sabonna", "Liochello");
 
-        Bonus.getInstance().clientsRandomBonus(c1);
+
+        //c4.makeOrder();
+
+
+        c1.makeOrder();
+        c1.makeOrder();
+       // c1.makeOrder();
+        //c2.makeOrder();
+        // c3.makeOrder();
+
+        //Bonus.getInstance().clientsRandomBonus(c1);
+        // c1.discount();
     }
 
     public void checkWaiterRevenue() {
@@ -108,8 +118,10 @@ Initializing ingredients
         initWaiters();
         clientMakesOrder();
         //System.out.println("=======ITERATOR========");
-       // displayOrders();
-        //displayIncome();
+        // displayOrders();
+        displayIncome();
+        Bistro.getInstance().saveOrders();
+        Bistro.getInstance().readFronJson();
 
 
     }
@@ -128,4 +140,6 @@ Initializing ingredients
         Launcher launcher = new Launcher();
         launcher.fullInit();
     }
+
+
 }

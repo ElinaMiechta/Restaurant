@@ -5,6 +5,7 @@ public interface IDish {
    int getPrice();
    int getWeight();
    int getCalories();
+   Category getCategory();
 
 
 }

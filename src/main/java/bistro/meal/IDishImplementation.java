@@ -22,4 +22,9 @@ public class IDishImplementation implements IDish{
     public int getCalories() {
         return 0;
     }
+
+    @Override
+    public Category getCategory() {
+        return null;
+    }
 }

@@ -29,4 +29,9 @@ public class DishDecorator implements IDish {
     public int getCalories() {
         return this.iDish.getCalories();
     }
+
+    @Override
+    public Category getCategory() {
+        return this.iDish.getCategory();
+    }
 }
